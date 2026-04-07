@@ -1,3 +1,6 @@
+import { faBicycle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { testonials } from "../data/data";
 import React from "react";
 
 function Main() {
@@ -75,7 +78,8 @@ function Main() {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-48 object-cover"
+                  loading="lazy"
+                  className="w-full h-48 object-cover shadow-xs shadow-black"
                 />
                 <div className="p-6 flex flex-col grow">
                   <div className="flex justify-between items-center mb-4">
@@ -85,9 +89,9 @@ function Main() {
                     </span>
                   </div>
                   <p className="text-gray-600 mb-6 grow">{item.description}</p>
-                  <button className="flex items-center font-bold text-black hover:underline">
+                  <button className="flex items-center gap-3 font-bold text-black hover:underline">
                     Order a delivery
-                    <span className="ml-2">🚴</span>
+                    <FontAwesomeIcon icon={faBicycle} />
                   </button>
                 </div>
               </div>
@@ -95,9 +99,68 @@ function Main() {
           </div>
         </div>
       </section>
-      <section className="testimonials">
-        <div>
-            
+      <section className="py-16 bg-[#EDEFEE]">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-10">Testimonials</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {testonials.map((item, index) => (
+              <div
+                key={index}
+                className="bg-white p-4 rounded-xl shadow text-center"
+              >
+                <p className="mb-2">{item.rating}</p>
+
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-16 h-16 rounded-full mx-auto mb-3 object-cover"
+                />
+
+                <h3 className="font-bold">{item.name}</h3>
+
+                <p className="text-gray-600 text-sm mt-2">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* About section */}
+      <section className="py-16 bg-white overflow-hidden">
+        <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+          {/* Left Content */}
+          <div className="flex-1">
+            <header className="mb-6">
+              <h1 className="text-5xl font-bold text-black mb-1">
+                Little Lemon
+              </h1>
+              <h2 className="text-3xl text-gray-700">Chicago</h2>
+            </header>
+            <p className="text-xl leading-relaxed text-gray-800 max-w-md">
+              Located in Chicago, Little Lemon is renowned for its delectable
+              dishes made from fresh, local ingredients. Offering a cozy
+              ambiance and attentive service, it's an ideal destination for
+              casual dining or memorable gatherings. Enjoy delicious cuisine and
+              delightful moments at Little Lemon.
+            </p>
+          </div>
+
+          {/* Right Photos Section */}
+          <div className="flex-1 relative h-100 w-full mt-12 md:mt-0">
+            <img
+              src="/images/res.jpg"
+              alt="restaurant interior white"
+              loading="lazy"
+              className="absolute bottom-0 left-0 w-64 h-80 object-cover z-20 rounded-lg shadow-md"
+            />
+
+            <img
+              src="/images/res2.jpg"
+              alt="restaurant interior dark"
+              loading="lazy"
+              className="absolute top-0 right-0 w-64 h-80 object-cover z-10 rounded-lg shadow-md"
+            />
+          </div>
         </div>
       </section>
     </>
