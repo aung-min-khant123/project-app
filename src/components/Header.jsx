@@ -1,6 +1,9 @@
-import React from "react";
+import { faArrowRightToBracket, faBars, faCartArrowDown, faCheck, faCircleInfo, faHouse, faPhone, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from "react";
 
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <header className="shadow-md">
       <nav className="max-w-4xl mx-auto flex items-center justify-between px-6 py-4">
@@ -49,8 +52,35 @@ function Header() {
 
         {/* Mobile Menu Icon */}
         <div className="md:hidden">
-          <button className="text-2xl">☰</button>
+          <button onClick={() => setIsOpen(true)} className="text-2xl">
+            <FontAwesomeIcon icon={faBars} />
+          </button>
         </div>
+        {/* Mobile Sidebar */}
+<div
+  className={`fixed top-0 right-0 h-auto w-65 bg-white shadow-lg transform transition-transform duration-300 z-50 
+  ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+>
+  {/* Close Button */}
+  <div className="flex justify-end p-4">
+    <button
+      className="text-2xl"
+      onClick={() => setIsOpen(false)}
+    >
+      <FontAwesomeIcon icon={faXmark} />
+    </button>
+  </div>
+
+  {/* Links */}
+  <ul className="flex flex-col gap-6 p-6 font-medium text-lg tracking-widest">
+    <li className="bg-amber-300 rounded-md"><FontAwesomeIcon icon={faHouse}/> <a href="#">Home</a></li>
+    <li><FontAwesomeIcon icon={faCircleInfo}/> <a href="#">About</a></li>
+    <li><FontAwesomeIcon icon={faCartArrowDown} /> <a href="#">Cart</a></li>
+    <li><FontAwesomeIcon icon={faCheck} /> <a href="#">Reservations</a></li>
+    <li><FontAwesomeIcon icon={faPhone} /> <a href="#">Order Online</a></li>
+    <li><FontAwesomeIcon icon={faArrowRightToBracket} /> <a href="#">Login</a></li>
+  </ul>
+</div>
       </nav>
     </header>
   );

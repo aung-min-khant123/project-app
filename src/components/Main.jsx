@@ -29,19 +29,31 @@ function Main() {
   ];
   return (
     <>
-      <section className="bg-[#495E57] text-white py-8 relative">
-        <div className="max-w-4xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+      <section className="bg-[#495E57] text-white py-5 md:py-10 relative">
+        <div className="max-w-4xl max-h-96 mx-auto px-4 flex  md:flex-row  items-center justify-center md:justify-between">
           {/* Left Content */}
           <div className="max-w-xs ">
-            <h1 className="text-5xl font-bold text-yellow-400">Little Lemon</h1>
+            <h1 className="text-5xl font-bold text-yellow-400">Little Lemon</h1> 
             <h2 className="text-2xl mb-4">Chicago</h2>
 
-            <p className="text-gray-200 text-xl mb-2 ">
+            <p className="text-gray-200 text-xl mb-2 hidden md:block">
               We are a family owned Mediterranean restaurant, focused on
               traditional recipes served with a modern twist.
             </p>
 
-            <button className="bg-yellow-400 text-black px-6 py-3 font-semibold hover:bg-yellow-300 transition rounded-xl">
+            <div className="md:hidden flex gap-1.5">
+              <p className="flex-1 text-gray-200 text-sm mb-2">
+                We are a family owned Mediterranean restaurant, focused on
+                traditional recipes served with a modern twist.
+              </p>
+              <img
+              src="/images/restauranfood.jpg"
+              alt="Food"
+              className="flex-1 md:hiddeen w-40 h-40 object-cover rounded-xl shadow-lg"
+            />
+            </div>
+
+            <button className="bg-yellow-400 text-black px-6 py-3 font-semibold hover:bg-yellow-300 transition rounded-xl mt-3 md:mt-0">
               Reserve a Table
             </button>
           </div>
@@ -51,7 +63,7 @@ function Main() {
             <img
               src="/images/restauranfood.jpg"
               alt="Food"
-              className="w-80 h-90 object-cover rounded-2xl shadow-lg"
+              className="hidden md:block w-50 h-45 md:w-80 md:h-90 object-cover rounded-xl shadow-lg hover:"
             />
           </div>
         </div>
@@ -92,7 +104,7 @@ function Main() {
                   <button className="flex items-center gap-3 font-bold text-black hover:underline">
                     Order a delivery
                     <FontAwesomeIcon icon={faBicycle} />
-                  </button>
+                  </button> 
                 </div>
               </div>
             ))}
@@ -125,18 +137,19 @@ function Main() {
           </div>
         </div>
       </section>
+
       {/* About section */}
-      <section className="py-16 bg-white overflow-hidden">
-        <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+      <section className="py-5 md:py-16 bg-white overflow-hidden">
+        <div className="max-w-5xl h-150 md:h-auto mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-12">
           {/* Left Content */}
           <div className="flex-1">
             <header className="mb-6">
-              <h1 className="text-5xl font-bold text-black mb-1">
+              <h1 className="text-2xl md:text-5xl font-bold text-black mb-1">
                 Little Lemon
               </h1>
-              <h2 className="text-3xl text-gray-700">Chicago</h2>
+              <h2 className="text:lg md:text-3xl text-gray-700">Chicago</h2>
             </header>
-            <p className="text-xl leading-relaxed text-gray-800 max-w-md">
+            <p className="text-md md:text-xl leading-relaxed text-gray-800 max-w-md">
               Located in Chicago, Little Lemon is renowned for its delectable
               dishes made from fresh, local ingredients. Offering a cozy
               ambiance and attentive service, it's an ideal destination for
@@ -146,19 +159,19 @@ function Main() {
           </div>
 
           {/* Right Photos Section */}
-          <div className="flex-1 relative h-100 w-full mt-12 md:mt-0">
+          <div className="flex-1 relative h-100 w-full md:mt-0">
             <img
               src="/images/res.jpg"
               alt="restaurant interior white"
               loading="lazy"
-              className="absolute bottom-0 left-0 w-64 h-80 object-cover z-20 rounded-lg shadow-md"
+              className="absolute bottom-0 right-0  w-55 h-55 md:w-64 md:h-80 object-cover z-20 rounded-lg shadow-md"
             />
 
             <img
               src="/images/res2.jpg"
               alt="restaurant interior dark"
               loading="lazy"
-              className="absolute top-0 right-0 w-64 h-80 object-cover z-10 rounded-lg shadow-md"
+              className="absolute top-0 left-0  w-55 h-55 md:w-64 md:h-80 object-cover z-10 rounded-lg shadow-md"
             />
           </div>
         </div>
