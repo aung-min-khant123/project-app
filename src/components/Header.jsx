@@ -49,7 +49,7 @@ function Header() {
             </a>
           </li>
         </ul>
-
+        
         {/* Mobile Menu Icon */}
         <div className="md:hidden">
           <button onClick={() => setIsOpen(true)} className="text-2xl">
@@ -73,7 +73,7 @@ function Header() {
 
   {/* Links */}
   <ul className="flex flex-col gap-6 p-6 font-medium text-lg tracking-widest">
-    <li className="bg-amber-300 rounded-md"><FontAwesomeIcon icon={faHouse}/> <a href="#">Home</a></li>
+    <li><FontAwesomeIcon icon={faHouse}/> <a href="#">Home</a></li>
     <li><FontAwesomeIcon icon={faCircleInfo}/> <a href="#">About</a></li>
     <li><FontAwesomeIcon icon={faCartArrowDown} /> <a href="#">Cart</a></li>
     <li><FontAwesomeIcon icon={faCheck} /> <a href="#">Reservations</a></li>

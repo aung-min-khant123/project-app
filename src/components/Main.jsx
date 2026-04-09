@@ -1,9 +1,17 @@
 import { faBicycle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { testonials } from "../data/data";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Skeleton from "./Skeleton";
 
 function Main() {
+
+  const [loading , setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {setLoading(false)}, 1000)
+  }, [])
+  
   const specials = [
     {
       title: "Greek salad",
@@ -49,6 +57,8 @@ function Main() {
               <img
               src="/images/restauranfood.jpg"
               alt="Food"
+              loading="lazy"
+              decoding="async"
               className="flex-1 md:hiddeen w-40 h-40 object-cover rounded-xl shadow-lg"
             />
             </div>
@@ -63,19 +73,23 @@ function Main() {
             <img
               src="/images/restauranfood.jpg"
               alt="Food"
+              loading="lazy"
+              decoding="async"
               className="hidden md:block w-50 h-45 md:w-80 md:h-90 object-cover rounded-xl shadow-lg hover:"
             />
           </div>
         </div>
       </section>
-      <section className="py-20 my-7 bg-white">
+
+      {/* Special Menu section */}
+      <section className="py-5 md:py-20 my-0 md:my-7 bg-white">
         <div className="max-w-4xl mx-auto px-6">
           {/* Section Header */}
-          <div className="flex justify-between items-center mb-10">
-            <h2 className="text-4xl font-bold text-black">
+          <div className="flex justify-between items-center mb-5 md:mb-10">
+            <h2 className="text-md md:text-4xl font-bold text-black">
               This weeks specials!
             </h2>
-            <button className="bg-yellow-400 text-black px-8 py-3 font-bold rounded-2xl hover:bg-yellow-300 transition">
+            <button className="bg-yellow-400 text-black px-4 md:px-8 py-3 font-bold rounded-2xl hover:bg-yellow-300 transition">
               Online Menu
             </button>
           </div>
@@ -87,12 +101,14 @@ function Main() {
                 key={index}
                 className="bg-[#EDEFEE] rounded-t-2xl overflow-hidden flex flex-col shadow-sm"
               >
-                <img
+                {loading ? <Skeleton></Skeleton> : <img
                   src={item.image}
                   alt={item.title}
                   loading="lazy"
+                  decoding="async"
                   className="w-full h-48 object-cover shadow-xs shadow-black"
-                />
+                /> }
+                
                 <div className="p-6 flex flex-col grow">
                   <div className="flex justify-between items-center mb-4">
                     <h3 className="text-xl font-bold">{item.title}</h3>

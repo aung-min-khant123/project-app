@@ -3,10 +3,10 @@ import React from "react";
 function Footer() {
   return (
     <>
-      <footer className="bg-[#D9D9D9] py-12">
+      <footer className="bg-[#D9D9D9] md:py-12">
         <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center sm:text-left">
           {/* Column 1: Logo */}
-          <div className=" md:flex flex justify-center sm:justify-start">
+          <div className="flex justify-center sm:justify-start">
             <img
               src="/images/footerLogo.png"
               alt="Little Lemon Logo"
