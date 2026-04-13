@@ -1,12 +1,22 @@
-import { faArrowRightToBracket, faBars, faCartArrowDown, faCheck, faCircleInfo, faHouse, faPhone, faXmark } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowRightToBracket,
+  faBars,
+  faCartArrowDown,
+  faCheck,
+  faCircleInfo,
+  faHouse,
+  faPhone,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <header className="shadow-md">
-      <nav className="max-w-4xl mx-auto flex items-center justify-between px-6 py-4">
+      <nav className="max-w-4xl mx-auto flex items-center justify-between px-3 py-1">
         {/* Logo */}
         <div className="">
           <img
@@ -19,37 +29,40 @@ function Header() {
         {/* Nav Links */}
         <ul className="hidden md:flex items-center gap-8 font-medium text-md">
           <li>
-            <a href="#" className="hover:text-green-600 transition">
+            <Link to="/" className="hover:text-green-600 transition">
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="hover:text-green-600 transition">
+            <Link to="/about" className="hover:text-green-600 transition">
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="hover:text-green-600 transition">
-              Menu
-            </a>
+            <Link to="/cart" className="hover:text-green-600 transition">
+              Cart
+            </Link>
           </li>
           <li>
-            <a href="#" className="hover:text-green-600 transition">
+            <Link
+              to="/reservations"
+              className="hover:text-green-600 transition"
+            >
               Reservations
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="hover:text-green-600 transition">
+            <Link to="/order" className="hover:text-green-600 transition">
               Order Online
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="hover:text-green-600 transition">
+            <Link to="/login" className="hover:text-green-600 transition">
               Login
-            </a>
+            </Link>
           </li>
         </ul>
-        
+
         {/* Mobile Menu Icon */}
         <div className="md:hidden">
           <button onClick={() => setIsOpen(true)} className="text-2xl">
@@ -57,30 +70,61 @@ function Header() {
           </button>
         </div>
         {/* Mobile Sidebar */}
-<div
-  className={`fixed top-0 right-0 h-auto w-65 bg-white shadow-lg transform transition-transform duration-300 z-50 
+        <div
+          className={`fixed top-0 right-0 h-auto w-65 bg-white shadow-lg transform transition-transform duration-300 z-50 md:hidden 
   ${isOpen ? "translate-x-0" : "translate-x-full"}`}
->
-  {/* Close Button */}
-  <div className="flex justify-end p-4">
-    <button
-      className="text-2xl"
-      onClick={() => setIsOpen(false)}
-    >
-      <FontAwesomeIcon icon={faXmark} />
-    </button>
-  </div>
+        >
+          {/* Close Button */}
+          <div className="flex justify-between p-2">
+            <img src="/images/Logo .svg"/>
+            <button className="text-2xl" onClick={() => setIsOpen(false)}>
+              <FontAwesomeIcon icon={faXmark} />
+            </button>
+          </div>
 
-  {/* Links */}
-  <ul className="flex flex-col gap-6 p-6 font-medium text-lg tracking-widest">
-    <li><FontAwesomeIcon icon={faHouse}/> <a href="#">Home</a></li>
-    <li><FontAwesomeIcon icon={faCircleInfo}/> <a href="#">About</a></li>
-    <li><FontAwesomeIcon icon={faCartArrowDown} /> <a href="#">Cart</a></li>
-    <li><FontAwesomeIcon icon={faCheck} /> <a href="#">Reservations</a></li>
-    <li><FontAwesomeIcon icon={faPhone} /> <a href="#">Order Online</a></li>
-    <li><FontAwesomeIcon icon={faArrowRightToBracket} /> <a href="#">Login</a></li>
-  </ul>
-</div>
+          {/* Links */}
+          <ul className="flex flex-col gap-6 p-6 font-medium text-lg tracking-widest">
+            <li>
+              <FontAwesomeIcon icon={faHouse} />{" "}
+              <Link to="/" className="hover:text-green-600 transition">
+                Home
+              </Link>
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faCircleInfo} />{" "}
+              <Link to="/about" className="hover:text-green-600 transition">
+                About
+              </Link>
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faCartArrowDown} />{" "}
+              <Link to="/cart" className="hover:text-green-600 transition">
+                Cart
+              </Link>
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faCheck} />{" "}
+              <Link
+                to="/reservations"
+                className="hover:text-green-600 transition"
+              >
+                Resvervations
+              </Link>
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faPhone} />{" "}
+              <Link to="/order" className="hover:text-green-600 transition">
+                Order Online
+              </Link>
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faArrowRightToBracket} />{" "}
+              <Link to="/login" className="hover:text-green-600 transition">
+                Login
+              </Link>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
   );

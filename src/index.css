@@ -8,3 +8,12 @@
     --secondary-bg-3:#edefee;
     --secondary-bg-4:#333333;
 }
+
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

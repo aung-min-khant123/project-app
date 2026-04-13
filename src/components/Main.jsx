@@ -69,13 +69,13 @@ function Main() {
           </div>
 
           {/* Right Image */}
-          <div className="mt-8 md:mt-0 md:absolute right-93 top-10">
+          <div className="mt-8 lg:mt-0 lg:absolute right-93 top-10">
             <img
               src="/images/restauranfood.jpg"
               alt="Food"
               loading="lazy"
               decoding="async"
-              className="hidden md:block w-50 h-45 md:w-80 md:h-90 object-cover rounded-xl shadow-lg hover:"
+              className="hidden md:block lg:block w-80 h-90 object-cover rounded-xl shadow-lg hover:"
             />
           </div>
         </div>
@@ -156,7 +156,7 @@ function Main() {
 
       {/* About section */}
       <section className="py-5 md:py-16 bg-white overflow-hidden">
-        <div className="max-w-5xl h-150 md:h-auto mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-12">
+        <div className="max-w-4xl h-150 md:h-auto mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-12">
           {/* Left Content */}
           <div className="flex-1">
             <header className="mb-6">

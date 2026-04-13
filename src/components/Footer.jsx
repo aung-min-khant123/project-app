@@ -4,7 +4,7 @@ function Footer() {
   return (
     <>
       <footer className="bg-[#D9D9D9] md:py-12">
-        <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center sm:text-left">
+        <div className="max-w-4xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center sm:text-left">
           {/* Column 1: Logo */}
           <div className="flex justify-center sm:justify-start">
             <img

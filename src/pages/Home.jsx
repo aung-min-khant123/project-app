@@ -6,7 +6,7 @@ import Footer from '../components/Footer'
 function Home() {
   return (
     <>
-        <Header></Header>
+        {/* <Header></Header> */}
         <Main></Main>
         <Footer></Footer>
     </>
