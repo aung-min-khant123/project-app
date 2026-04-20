@@ -38,7 +38,7 @@ function Main() {
   return (
     <>
       <section className="bg-[#495E57] text-white py-5 md:py-10 relative">
-        <div className="max-w-4xl max-h-96 mx-auto px-4 flex  md:flex-row  items-center justify-center md:justify-between">
+        <div className="max-w-4xl max-h-96 mx-auto  flex  md:flex-row  items-center justify-center md:justify-between px-3">
           {/* Left Content */}
           <div className="max-w-xs ">
             <h1 className="text-5xl font-bold text-yellow-400">Little Lemon</h1> 
@@ -83,7 +83,7 @@ function Main() {
 
       {/* Special Menu section */}
       <section className="py-5 md:py-20 my-0 md:my-7 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto ">
           {/* Section Header */}
           <div className="flex justify-between items-center mb-5 md:mb-10">
             <h2 className="text-md md:text-4xl font-bold text-black">
@@ -127,8 +127,10 @@ function Main() {
           </div>
         </div>
       </section>
+      
+      {/* Testimonials */}
       <section className="py-16 bg-[#EDEFEE]">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-10">Testimonials</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -156,7 +158,7 @@ function Main() {
 
       {/* About section */}
       <section className="py-5 md:py-16 bg-white overflow-hidden">
-        <div className="max-w-4xl h-150 md:h-auto mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-12">
+        <div className="max-w-4xl h-150 md:h-auto mx-auto flex flex-col md:flex-row items-center justify-center gap-12">
           {/* Left Content */}
           <div className="flex-1">
             <header className="mb-6">

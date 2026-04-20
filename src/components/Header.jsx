@@ -10,7 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -76,7 +76,7 @@ function Header() {
         >
           {/* Close Button */}
           <div className="flex justify-between p-2">
-            <img src="/images/Logo .svg"/>
+            <img src="/images/Logo .svg" />
             <button className="text-2xl" onClick={() => setIsOpen(false)}>
               <FontAwesomeIcon icon={faXmark} />
             </button>
@@ -85,43 +85,96 @@ function Header() {
           {/* Links */}
           <ul className="flex flex-col gap-6 p-6 font-medium text-lg tracking-widest">
             <li>
-              <FontAwesomeIcon icon={faHouse} />{" "}
-              <Link to="/" className="hover:text-green-600 transition">
-                Home
-              </Link>
-            </li>
-            <li>
-              <FontAwesomeIcon icon={faCircleInfo} />{" "}
-              <Link to="/about" className="hover:text-green-600 transition">
-                About
-              </Link>
-            </li>
-            <li>
-              <FontAwesomeIcon icon={faCartArrowDown} />{" "}
-              <Link to="/cart" className="hover:text-green-600 transition">
-                Cart
-              </Link>
-            </li>
-            <li>
-              <FontAwesomeIcon icon={faCheck} />{" "}
-              <Link
-                to="/reservations"
-                className="hover:text-green-600 transition"
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `flex items-center gap-3 px-3 py-2 rounded-lg transition ${
+                    isActive
+                      ? "bg-green-100 text-green-700 font-semibold"
+                      : "hover:text-green-600"
+                  }`
+                }
               >
+                <FontAwesomeIcon icon={faHouse} /> Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  `flex items-center gap-3 px-3 py-2 rounded-lg transition ${
+                    isActive
+                      ? "bg-green-100 text-green-700 font-semibold"
+                      : "hover:text-green-600"
+                  }`
+                }
+              >
+                <FontAwesomeIcon icon={faCircleInfo} /> About
+              </NavLink>
+            </li>
+            <li>
+              
+              <NavLink
+                to="/cart"
+                className={({ isActive }) =>
+                  `flex items-center gap-3 px-3 py-2 rounded-lg transition ${
+                    isActive
+                      ? "bg-green-100 text-green-700 font-semibold"
+                      : "hover:text-green-600"
+                  }`
+                }
+              >
+                <FontAwesomeIcon icon={faCartArrowDown} />{" "}
+                Cart
+              </NavLink>
+            </li>
+            <li>
+              
+              <NavLink
+                to="/reservations"
+                className={({ isActive }) =>
+                  `flex items-center gap-3 px-3 py-2 rounded-lg transition ${
+                    isActive
+                      ? "bg-green-100 text-green-700 font-semibold"
+                      : "hover:text-green-600"
+                  }`
+                }
+              >
+                <FontAwesomeIcon icon={faCheck} />{" "}
                 Resvervations
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <FontAwesomeIcon icon={faPhone} />{" "}
-              <Link to="/order" className="hover:text-green-600 transition">
+              
+              <NavLink
+                to="/order"
+                className={({ isActive }) =>
+                  `flex items-center gap-3 px-3 py-2 rounded-lg transition ${
+                    isActive
+                      ? "bg-green-100 text-green-700 font-semibold"
+                      : "hover:text-green-600"
+                  }`
+                }
+              >
+                <FontAwesomeIcon icon={faPhone} />{" "}
                 Order Online
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <FontAwesomeIcon icon={faArrowRightToBracket} />{" "}
-              <Link to="/login" className="hover:text-green-600 transition">
+              
+              <NavLink
+                to="/login"
+                className={({ isActive }) =>
+                  `flex items-center gap-3 px-3 py-2 rounded-lg transition ${
+                    isActive
+                      ? "bg-green-100 text-green-700 font-semibold"
+                      : "hover:text-green-600"
+                  }`
+                }
+              >
+                <FontAwesomeIcon icon={faArrowRightToBracket} />{" "}
                 Login
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>

@@ -17,3 +17,17 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Keep page layout stable when vertical scrollbar appears/disappears.
+   - `scrollbar-gutter: stable` reserves space for the scrollbar when supported.
+   - `overflow-y: scroll` ensures a scrollbar gutter on browsers without support.
+   - `min-height: 100vh` prevents short pages from changing the viewport height.
+*/
+html {
+  scrollbar-gutter: stable;
+  overflow-y: scroll;
+}
+
+body {
+  min-height: 100vh;
+}

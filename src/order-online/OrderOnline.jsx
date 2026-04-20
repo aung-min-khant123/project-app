@@ -11,7 +11,7 @@ function OrderOnline() {
         </h1>
 
         {/* Search */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-6">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-6">                  
           <div className="flex items-center bg-white px-4 py-3 rounded-full shadow w-full md:w-1/2">
             <span className="mr-2 text-gray-500">🔍</span>
             <input
