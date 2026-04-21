@@ -1,33 +1,35 @@
 import React, { useReducer, useState } from "react";
 import { fetchAPI, submitAPI } from "../api/api";
 
-// 🔥 Step 1: Reducer functions
+// ✅ reducer
+const updateTimes = (state, action) => {
+  switch (action.type) {
+    case "UPDATE_TIMES":
+      return fetchAPI(new Date(action.date + "T00:00:00"));
+    default:
+      return state;
+  }
+};
+
+// ✅ initialize with today
 const initializeTimes = () => {
   return fetchAPI(new Date());
 };
 
-const updateTimes = (state, action) => {
-  if (action.type === "UPDATE_TIMES") {
-    return fetchAPI(new Date(action.date));
-  }
-  return state;
-};
-
 function BookingPage() {
-  // 🔥 Step 2: useReducer
+  const today = new Date().toISOString().split("T")[0];
+
   const [availableTimes, dispatch] = useReducer(
     updateTimes,
     [],
     initializeTimes
   );
 
-  // 🔥 Form state
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState(today);
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("Birthday");
 
-  // 🔥 Submit handler
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -50,7 +52,6 @@ function BookingPage() {
   return (
     <section className="min-h-screen bg-gray-100 flex items-center justify-center px-4 py-10">
       <div className="bg-white p-8 rounded-2xl shadow-md w-full max-w-md">
-        
         <h2 className="text-2xl font-bold mb-6 text-center">
           Reserve a Table
         </h2>
@@ -65,10 +66,12 @@ function BookingPage() {
               className="w-full border p-2 rounded-lg"
               value={date}
               onChange={(e) => {
-                setDate(e.target.value);
+                const newDate = e.target.value;
+                setDate(newDate);
+                setTime(""); // ✅ reset time
                 dispatch({
                   type: "UPDATE_TIMES",
-                  date: e.target.value,
+                  date: newDate,
                 });
               }}
               required
@@ -104,7 +107,7 @@ function BookingPage() {
               max="10"
               className="w-full border p-2 rounded-lg"
               value={guests}
-              onChange={(e) => setGuests(e.target.value)}
+              onChange={(e) => setGuests(Number(e.target.value))} // ✅ number
             />
           </div>
 
